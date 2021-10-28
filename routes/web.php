@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GigController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// show form
+Route::get('/gigs/create', '\App\Http\Controllers\GigController@create');
+
+// Add gig to database
+Route::post('/gigs', '\App\Http\Controllers\GigController@store');
