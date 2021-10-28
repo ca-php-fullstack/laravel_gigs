@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gigs;
+use App\Models\Gig;
 
 class GigController extends Controller
 {
