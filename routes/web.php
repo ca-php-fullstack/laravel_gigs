@@ -14,6 +14,8 @@ use App\Http\Controllers\GigController;
 |
 */
 
+auth()->loginUsingId(1);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,3 +25,7 @@ Route::get('/gigs/create', '\App\Http\Controllers\GigController@create');
 
 // Add gig to database
 Route::post('/gigs', '\App\Http\Controllers\GigController@store');
+
+Route::get('/gigs', function () {
+    echo "All gigs page";
+})->name('gigs');
