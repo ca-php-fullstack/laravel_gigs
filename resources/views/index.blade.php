@@ -15,6 +15,11 @@
                   <p class="card-text">Genre: {{$gig->genre }}</p>
 
                   <p class="card-text"><small class="text-muted">{{$gig->created_at}}</small></p>
+
+                  <form action="/followers">
+                    <input type="hidden" id="custId" name="artist_id" value="{{$gig->artist_id}}">
+                    <button type="submit" class="btn btn-warning"> Follow</button>
+                  </form>
                 </div>
               </div>
             </div>

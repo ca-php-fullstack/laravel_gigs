@@ -24,3 +24,5 @@ Route::get('/gigs/create', '\App\Http\Controllers\GigController@create');
 Route::post('/gigs', '\App\Http\Controllers\GigController@store');
 
 Route::get('/gigs', '\App\Http\Controllers\GigController@index')->name('gigs');
+
+Route::get('/followers', '\App\Http\Controllers\FollowerController@store')->name('followers');
