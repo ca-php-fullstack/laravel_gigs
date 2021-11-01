@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// added some changes
+
 auth()->loginUsingId(1);
 
 Route::get('/', function () {
