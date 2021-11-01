@@ -37,5 +37,6 @@ class GigController extends Controller
 
         //redirect
         return redirect()->route('gigs');
+
     }
 }
