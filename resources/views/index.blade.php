@@ -15,6 +15,19 @@
                   <p class="card-text">Genre: {{$gig->genre }}</p>
 
                   <p class="card-text"><small class="text-muted">{{$gig->created_at}}</small></p>
+                  <div class="card-footer">
+                  <form action="handle" method="POST">
+                      @csrf
+                      <input type="hidden" name="gig_id" value="{{$gig->id}}">
+                      <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                        @if (DB::table('attendances')->where('gig_id', $gig->id)->where('user_id', auth()->user()->id)->exists())
+                      <button type="submit" class="btn btn-success btn-outline">You are Going</button>  
+                        @else
+                      <button type="submit" class="btn btn-danger btn-primary">You are Not Going</button>    
+                        @endif
+                  </form>
+                  </div>
+
                 </div>
               </div>
             </div>
