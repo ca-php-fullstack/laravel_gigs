@@ -3,6 +3,13 @@
     <div class="row">
         <div class="col-md-7 col-lg-8">
             <h4 class="mb-3">Create a gig</h4>
+            @if($errors->any())
+                <div class="alert alert-danger">
+                  @foreach($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                  @endforeach
+                </div>
+            @endif
             <form class="needs-validation" action="/gigs" method="POST" novalidate>
               @csrf
               <div class="row g-3">
